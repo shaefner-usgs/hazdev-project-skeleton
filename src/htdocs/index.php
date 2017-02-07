@@ -8,18 +8,18 @@ if (!isset($TEMPLATE)) {
   include_once '../conf/config.inc.php';
 
   $TITLE = 'Hazdev Project Skeleton v{{VERSION}}';
-  $HEAD = '<link rel="stylesheet" href="css/index.css"/>';
-  $FOOT = '<script src="js/index.js"></script>';
+  $HEAD = '
+    <link rel="stylesheet" href="/lib/leaflet-0.7.7/leaflet.css" />
+    <link rel="stylesheet" href="css/index.css"/>
+  ';
+  $FOOT = '
+    <script src="/lib/leaflet-0.7.7/leaflet.js"></script>
+    <script src="js/index.js"></script>
+  ';
 
   include 'template.inc.php';
 }
 
 ?>
 
-<div id="application">
-  <noscript>
-    <a href="https://www.google.com/search?q=javascript">
-      This page requires javascript.
-    </a>
-  </noscript>
-</div>
+<div class="map"></div>
