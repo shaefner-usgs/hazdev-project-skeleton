@@ -11,9 +11,54 @@ $PROMPTS = array(
 
   'MOUNT_PATH' => array(
     'prompt' => 'URL Path for application',
-    'default' => '/mount/path',
+    'default' => '',
     'secure' => false
-  )
+  ),
+  'APP_DIR' => array(
+    'prompt' => 'Absolute path to application root directory',
+    'default' => $APP_DIR,
+    'secure' => false
+  ),
+  'DATA_DIR' => array(
+    'prompt' => 'Absolute path to application data directory',
+    'default' => str_replace('/apps/', '/data/', $APP_DIR),
+    'secure' => false
+  ),
+  'DATA_HOST' => array(
+    'prompt' => 'Host where data files are served',
+    'default' => 'localhost',
+    'secure' => false
+  ),
+  'DB_DSN' => array(
+    'prompt' => 'Read-only database connection DSN string',
+    'default' => 'mysql:host=localhost;port=3306;dbname=dbname',
+    'secure' => false
+  ),
+  'DB_USER' => array(
+    'prompt' => 'Read-only username for database connections',
+    'default' => 'web',
+    'secure' => false
+  ),
+  'DB_PASS' => array(
+    'prompt' => 'Read-only password for database user',
+    'default' => '',
+    'secure' => true
+  )/*,
+  'DB_WRITE_DSN' => array(
+    'prompt' => 'Write Database connection DSN string',
+    'default' => 'mysql:host=localhost;port=3306;dbname=dbname',
+    'secure' => false
+  ),
+  'DB_WRITE_USER' => array(
+    'prompt' => 'Write username for database connections',
+    'default' => 'webwrite',
+    'secure' => false
+  ),
+  'DB_WRITE_PASS' => array(
+    'prompt' => 'Write Password for database user',
+    'default' => '',
+    'secure' => true
+  )*/
 
 );
 
