@@ -13,10 +13,10 @@ var eslint = {
   ],
   scripts: [
     config.src + '/htdocs/**/*.js'
-  ],
-  tests: [
-    config.test + '/**/*.js'
-  ]
+  ]//,
+//  tests: [
+//    config.test + '/**/*.js'
+//  ]
 };
 
 

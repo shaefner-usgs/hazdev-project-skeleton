@@ -13,19 +13,19 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('test', [
-    'build',
-    'connect:test',
-    'mocha_phantomjs'
+    'build'//,
+    //'connect:test',
+    //'mocha_phantomjs'
   ]);
 
   grunt.registerTask('build', [
     'clean:build',
     'eslint:scripts',
-    'eslint:tests',
+    //'eslint:tests',
     'browserify',
     'postcss:build',
-    'copy:build',
-    'copy:test'
+    'copy:build'//,
+    //'copy:test'
   ]);
 
   grunt.registerTask('builddist', [
@@ -52,12 +52,12 @@ module.exports = function (grunt) {
     'build',
     'configureRewriteRules',
     'configureProxies:dev',
-    'configureProxies:test',
+    //'configureProxies:test',
     'connect:template',
     'connect:dev',
-    'connect:test',
-    'connect:example',
-    'mocha_phantomjs',
+    //'connect:test',
+    //'connect:example',
+    //'mocha_phantomjs',
     'watch'
   ]);
 

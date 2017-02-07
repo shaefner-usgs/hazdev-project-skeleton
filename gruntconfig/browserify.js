@@ -60,7 +60,7 @@ var browserify = {
     ],
     options: {
     }
-  },
+  }/*,
 
   'test': {
     src: config.test + '/test.js',
@@ -68,7 +68,7 @@ var browserify = {
     options: {
       external: BUNDLE_CLASSES
     }
-  }
+  }*/
 
 };
 

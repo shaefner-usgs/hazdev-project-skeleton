@@ -30,16 +30,16 @@ var copy = {
     }
   },
 
-  test: {
+  /*test: {
     expand: true,
     cwd: config.test,
     dest: config.build + '/' + config.test,
-    src: [
-      '**/*',
-      '!**/*.js'
-    ],
+    src: [*/
+//      '**/*',
+//      '!**/*.js'
+/*    ],
     filter: 'isFile'
-  },
+  },*/
 
   dist: {
     expand: true,
