@@ -29,8 +29,8 @@ var watch = {
     files: [config.src + '/htdocs/**/*.js'],
     tasks: [
       'eslint:scripts',
-      'browserify',
-      'mocha_phantomjs'
+      'browserify'//,
+      //'mocha_phantomjs'
     ]
   },
 
@@ -51,20 +51,20 @@ var watch = {
     tasks: [
       'copy:build'
     ]
-  },
+  }/*,
 
   tests: {
     files: [
-      config.test + '/*.html',
-      config.test + '/**/*.js'
-    ],
+      config.test + '/*.html',*/
+//      config.test + '/**/*.js'
+/*    ],
     tasks: [
       'eslint:tests',
       'copy:test',
       'browserify:test',
       'mocha_phantomjs'
     ]
-  }
+  }*/
 
 };
 

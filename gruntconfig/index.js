@@ -9,7 +9,7 @@ var gruntConfig = {
   connect: require('./connect'),
   copy: require('./copy'),
   eslint: require('./eslint'),
-  mocha_phantomjs: require('./mocha_phantomjs'),
+  //mocha_phantomjs: require('./mocha_phantomjs'),
   postcss: require('./postcss'),
   uglify: require('./uglify'),
   watch: require('./watch'),
@@ -23,7 +23,7 @@ var gruntConfig = {
     'grunt-contrib-copy',
     'grunt-contrib-uglify',
     'grunt-contrib-watch',
-    'grunt-mocha-phantomjs',
+    //'grunt-mocha-phantomjs',
     'grunt-postcss',
     'gruntify-eslint'
   ]
