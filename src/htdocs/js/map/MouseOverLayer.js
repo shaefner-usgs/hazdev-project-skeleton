@@ -128,4 +128,4 @@ L.mouseOverLayer = function (options) {
   return new L.MouseOverLayer(options);
 };
 
-return L.MouseOverLayer;
+//return L.MouseOverLayer;
