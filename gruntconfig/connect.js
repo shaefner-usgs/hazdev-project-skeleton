@@ -28,6 +28,18 @@ var connect = {
 
   proxies: [
     {
+      context: '/data', // data on external server
+      host: config.ini.DATA_HOST,
+      port: 80,
+      headers: {
+        'accept-encoding': 'identity',
+        host: config.ini.DATA_HOST
+      },
+      rewrite: {
+        '^/data': MOUNT_PATH + '/data'
+      }
+    },
+    {
       context: '/theme/',
       host: 'localhost',
       port: config.templatePort,
@@ -38,6 +50,11 @@ var connect = {
   ],
 
   rules: [
+    {
+      from: '^(' + MOUNT_PATH + ')(.*)/+$',
+      to: 'http://localhost:' + config.buildPort + '$1$2', // strip final '/'
+      redirect: 'permanent'
+    },
     {
       from: '^' + MOUNT_PATH + '/(.*)$',
       to: '/$1'
@@ -51,8 +68,7 @@ var connect = {
       ],
       livereload: config.liveReloadPort,
       middleware: addMiddleware,
-      open: 'http://localhost:' + config.buildPort +
-          MOUNT_PATH + '/index.php',
+      open: 'http://localhost:' + config.buildPort + MOUNT_PATH,
       port: config.buildPort
     }
   },
@@ -64,13 +80,12 @@ var connect = {
       ],
       port: config.distPort,
       keepalive: true,
-      open: 'http://localhost:' + config.distPort +
-          MOUNT_PATH + '/index.php',
+      open: 'http://localhost:' + config.distPort + MOUNT_PATH,
       middleware: addMiddleware
     }
   },
 
-  example: {
+  /*example: {
     options: {
       base: [
         config.example,
@@ -81,7 +96,7 @@ var connect = {
       open: 'http://localhost:' + config.examplePort + '/example.php',
       port: config.examplePort
     }
-  },
+  },*/
 
   template: {
     options: {
@@ -91,7 +106,7 @@ var connect = {
       port: config.templatePort,
       middleware: addMiddleware
     }
-  },
+  }/*,
 
   test: {
     options: {
@@ -104,7 +119,7 @@ var connect = {
       port: config.testPort,
       open: 'http://localhost:' + config.testPort + '/test.html'
     }
-  }
+  }*/
 };
 
 
