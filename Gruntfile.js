@@ -23,6 +23,8 @@ module.exports = function (grunt) {
     'eslint:scripts',
     //'eslint:tests',
     'browserify',
+    'copy:leaflet',
+    'copy:leaflet_fullscreen',
     'postcss:build',
     'copy:build'//,
     //'copy:test'
