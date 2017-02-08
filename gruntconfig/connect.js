@@ -56,7 +56,7 @@ var connect = {
       redirect: 'permanent'
     },
     {
-      from: '^' + MOUNT_PATH + '/(.*)$',
+      from: '^' + MOUNT_PATH + '/?(.*)$',
       to: '/$1'
     }
   ],
