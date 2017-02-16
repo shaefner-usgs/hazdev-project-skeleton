@@ -23,6 +23,7 @@ var copy = {
     filter: 'isFile',
     options: {
       mode: true,
+      noProcess: ['**/*.{gif,ico,jpg,png,tif,pdf,mp4,kmz,gz,zip}'],
       process: function (content/*, srcpath*/) {
         // replace {{VERSION}} in php/html with version from package.json
         return content.replace('{{VERSION}}', packageJson.version);
